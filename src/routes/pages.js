@@ -1,0 +1,18 @@
+import express from 'express';
+const router = express.Router();
+
+router.get('/', (req, res) => {
+  res.render('index');
+});
+
+router.get('/home', (req, res) => {
+  res.render('index');
+});
+
+router.get('/admin', (req, res) => {
+  res.render('admin');
+});
+
+export default router;
+
+
