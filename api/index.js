@@ -51,5 +51,8 @@ app.get('/api/products', async (req, res) => {
 });
 
 app.use('/', pageRoutes);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 
 export default app;
