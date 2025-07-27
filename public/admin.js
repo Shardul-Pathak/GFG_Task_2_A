@@ -21,14 +21,12 @@ async function getProduct() {
     const product= await response.json();
     product.forEach(item => {
         const cardHtml = `
-                <div class="m-4 flex-none w-72 flex-shrink-0 bg-gray-800 rounded-xl shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                    <img src="${item.imageURL}" alt="${item.productName}" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-lg text-white font-bold mb-2">${item.productName}</h3>
-                        <p class=" text-white text-m">${item.description}</p>
-                        <button class="text-black bg-blue-300 text-sm rounded-3xl p-1 mt-2">Price: $${item.price}</button>
-                    </div>
-                 </div>
+                <article class="w-64 flex-shrink-0 bg-gray-700 bg-opacity-70 p-4 rounded-xl shadow-md">
+                    <img src="${item.imageURL}" alt="${item.productName}" class="w-full h-auto rounded-lg mb-3 min-h-40">
+                    <h3 class="text-lg font-semibold text-gray-100 mb-1">${item.productName}</h3>
+                    <p class="text-sm text-gray-300 mb-2">${item.description}</p>
+                    <p class="text-base font-bold text-[#4CAF50]">Price: ₹${item.price}</p>
+                </article>
             `;
             products.insertAdjacentHTML('beforeend', cardHtml);
         });
@@ -36,6 +34,7 @@ async function getProduct() {
 }
 
 window.addEventListener('load', () => {
+    getProduct();
     generateCards();
     updateScrollAmount();
 });
