@@ -35,7 +35,6 @@ async function getProduct() {
 
 window.addEventListener('load', () => {
     getProduct();
-    generateCards();
     updateScrollAmount();
 });
 window.addEventListener('resize', updateScrollAmount);

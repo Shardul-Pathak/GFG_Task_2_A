@@ -13,6 +13,10 @@ router.get('/admin', (req, res) => {
   res.render('admin');
 });
 
+router.get('/delete', (req, res) => {
+  res.render('removeItem');
+});
+
 export default router;
 
 

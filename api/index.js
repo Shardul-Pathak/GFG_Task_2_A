@@ -40,6 +40,20 @@ app.post('/admin', async (req, res) => {
   }
 });
 
+app.post('/remove', async (req, res) => {
+  const data = {
+    productName: req.body.names,
+  }
+  const existingProduct = await collection.findOne({ productName: data.productName });
+  if (!existingProduct) {
+    return res.send('Product Does not exist');
+  }
+  else {
+    await collection.deleteOne(data);
+    res.redirect('/');
+  }
+});
+
 app.get('/api/products', async (req, res) => {
   try {
     const products = await collection.find({});
@@ -51,5 +65,9 @@ app.get('/api/products', async (req, res) => {
 });
 
 app.use('/', pageRoutes);
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
 
 export default app;

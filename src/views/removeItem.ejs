@@ -25,14 +25,11 @@
                 </button>
             </nav>
         </header>
-        <form action="/admin" method="post" class="flex flex-col items-center">
+        <form action="/remove" method="post" class="flex flex-col items-center">
             <div class="flex flex-col items-center mt-10 bg-white/40 backdrop-blur-lg p-8 rounded-lg shadow-xl">
-                <h1 class="text-3xl font-bold mb-4">Add New Product</h1>
+                <h1 class="text-3xl font-bold mb-4">Remove Product</h1>
                 <input id="names" name="names" type="text" placeholder="Product Name" class="p-2 mb-4 rounded-lg bg-gray-800 text-white w-80" required>
-                <input id="url" name="url" type="text" placeholder="Image URL" class="p-2 mb-4 rounded-lg bg-gray-800 text-white w-80" required>
-                <input id="price" name="price" type="number" placeholder="Price" class="p-2 mb-4 rounded-lg bg-gray-800 text-white w-80" required>
-                <textarea id="description" name="description" placeholder="Description" class="p-2 mb-4 rounded-lg bg-gray-800 text-white w-80 h-18 max-h-24 min-h-18" required></textarea>
-                <button onclick="addProduct()" class="bg-[#4CAF50] hover:bg-green-600 text-white p-2 rounded-lg transition-colors duration-300">Add Product</button>
+                <button onclick="removeProduct()" class="bg-[#ff0000] hover:bg-red-600 text-white p-2 rounded-lg transition-colors duration-300">Remove</button>
             </div>
         </form>
     </main>
